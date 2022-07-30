@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div id="parentform" class="form-signin">
+        <div id="warning"></div>
+        <form id="forms" onsubmit="return false;">
+            <h1 class="h3 mb-3 font-weight-normal">Please enter your data</h1>
+            <div class="form-group has-feedback fnameBlock">
+                <label class="control-label col-form-label" for="fname">First Name:</label>
+                <input type="text" class="form-control" id="fname">
+            </div>
+            <div class="form-group has-feedback lnameBlock">
+                <label class="control-label col-form-label" for="lname">Last Name:</label>
+                <input type="text" class="form-control" id="lname">
+            </div>
+            <div class="form-group has-feedback emailBlock">
+                <label class="control-label col-form-label" for="email">Email</label>
+                <input type="email" class="form-control" id="email">
+            </div>
+            <div class="form-group has-feedback passBlock">
+                <label class="control-label col-form-label" for="pass">Password</label>
+                <input type="password" class="form-control" id="pass">
+            </div>
+            <div class="form-group has-feedback copassBlock">
+                <label class="control-label col-form-label" for="copass">Confirm password</label>
+                <input type="password" class="form-control" id="copass">
+            </div>
+            <button type="submit" class="btn btn-primary btn-lg mt-3 send_data">Отправить</button>
+        </form>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="scripts/script.js"> </script>
+</body>
+</html>
