@@ -6,10 +6,6 @@ $('.send_data').on('click', function() {
     let validPass = false;
     let validCoPass = false;
 
-    $("form").submit(function(event) {
-
-        event.preventDefault();
-
         let Fname = $('#fname').val();
         let Lname = $('#lname').val();
         let Email = $('#email').val();
@@ -30,13 +26,11 @@ $('.send_data').on('click', function() {
             return true;
         }
 
-
         if (Fname == "") {
             validFname = validsFalse('#fname', ".fnameBlock");
         } else {
             validFname = validsTrue('#fname', ".fnameBlock");
         }
-
 
         if (Lname == "") {
             validLname = validsFalse('#lname', ".lnameBlock");
@@ -44,13 +38,11 @@ $('.send_data').on('click', function() {
             validLname = validsTrue('#lname', ".lnameBlock");
         }
 
-
         if (Email == "" && !Email.includes("@")) {
             validEmail = validsFalse('#email', ".emailBlock");
         } else {
             validEmail = validsTrue('#email', ".emailBlock");
         }
-
 
         if (Pass == "") {
             validPass = validsFalse('#pass', ".passBlock");
@@ -58,16 +50,13 @@ $('.send_data').on('click', function() {
             validPass = validsTrue('#pass', ".passBlock");
         }
 
-
         if (CoPass == "" || CoPass != Pass) {
             validCoPass = validsFalse('#copass', ".copassBlock");
         } else {
             validCoPass = validsTrue('#copass', ".copassBlock");
         }
 
-
         if (validFname == true && validLname == true && validEmail == true && validPass == true && validCoPass == true) {
-            $('form').unbind('submit').submit();
 
             $.ajax({
                 type: 'POST',
@@ -86,5 +75,5 @@ $('.send_data').on('click', function() {
                 }
             });
         }
-    });
 });
+    
