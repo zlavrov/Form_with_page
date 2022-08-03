@@ -16,18 +16,18 @@ if (isset($_POST['Fname']) && isset($_POST['Lname']) && isset($_POST['Email'])) 
             fwrite($flog, "{user: " . $flname . ", id: " . $users["id"][$key] . ", adress: " . $email . ", is in the array: true}\n");
             fclose($flog);
             echo json_encode(array('result' => true));
-            return;
         } else {
             $flog = fopen('log.txt', 'a');
             fwrite($flog, "{user " . $flname . ", adress: " . $email . ", is in the array: false}\n");
             fclose($flog);
             echo json_encode(array('result' => false));
-            return;
         }
 
 } else {
 
+    echo json_encode(array('result' => false));
     exit;
+    
 }
 
 ?>
