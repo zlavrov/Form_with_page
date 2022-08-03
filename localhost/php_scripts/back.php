@@ -18,7 +18,7 @@ if (isset($_POST['Fname']) && isset($_POST['Lname']) && isset($_POST['Email'])) 
             echo json_encode(array('result' => true));
         } else {
             $flog = fopen('log.txt', 'a');
-            fwrite($flog, "{user " . $flname . ", adress: " . $email . ", is in the array: false}\n");
+            fwrite($flog, "{user: " . $flname . ", adress: " . $email . ", is in the array: false}\n");
             fclose($flog);
             echo json_encode(array('result' => false));
         }
